@@ -1,197 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riyed Ahmed - Personal Website</title>
+    <title>Riyed Ahmed's Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom Styles */
+        .navbar {
+            background: rgba(0, 0, 0, 0.5); /* Transparent background */
+        }
+
+        .nav-link {
+            color: white; /* Custom text color */
+            transition: color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .nav-link:hover {
+            color: #ffcc00; /* Custom hover color */
+            transform: scale(1.1); /* Example of scale transformation */
+        }
+
+        .hero {
+            background-image: url('your-hero-image.jpg'); /* Background image for hero section */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden; /* Ensures child elements respect boundaries */
+            position: relative;
+        }
+
+        .hero-text {
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for text */
+            padding: 20px;
+            border-radius: 10px;
+            transform: translateY(20px); /* Example of initial translateY transformation */
+            transition: transform 0.5s ease; /* Smooth transition for transform */
+        }
+
+        .hero:hover .hero-text {
+            transform: translateY(0); /* Transform reset on hover */
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            transform: scale(0.9); /* Example of scale transformation */
+            transition: transform 0.5s ease; /* Smooth transition for transform */
+        }
+
+        .section-title:hover {
+            transform: scale(1); /* Transform reset on hover */
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            transform: scale(0.95); /* Example of scale transformation */
+            transition: transform 0.3s ease; /* Smooth transition for transform */
+        }
+
+        .card:hover {
+            transform: scale(1); /* Transform reset on hover */
+            box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Example of box-shadow effect */
+        }
+    </style>
 </head>
+<body class="bg-gray-200">
 
-<body class="bg-gray-100 text-gray-800">
+<!-- Navigation Bar -->
+<nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-white text-lg font-bold">
+            Portfolio
+        </div>
+        <div id="menu-toggle" class="text-white cursor-pointer md:hidden">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </div>
+        <div id="menu" class="hidden md:flex space-x-4">
+            <a href="#" class="text-white">Home</a>
+            <a href="#" class="text-white">About</a>
+            <a href="#" class="text-white">Projects</a>
+            <a href="#" class="text-white">Contact</a>
+        </div>
+    </div>
+</nav>
 
-    <header class="bg-gray-900 text-white p-4 text-center">
-        <nav class="container mx-auto">
-            <ul class="flex justify-center space-x-8">
-                <li><a href="inndex.html" class="hover:text-gray-300">Home</a></li>
-                <li><a href="about.html" class="hover:text-gray-300">About Me</a></li>
-                <li><a href="#responsibilities" class="hover:text-gray-300">Responsibilities</a></li>
-                <li><a href="#achievements" class="hover:text-gray-300">Achievements</a></li>
-                <li><a href="#education" class="hover:text-gray-300">Education</a></li>
-                <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- JS for Mobile Menu Toggle -->
+<script>
+    const menuToggle = document.querySelector('#menu-toggle');
+    const menu = document.querySelector('#menu');
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero bg-gradient-to-b from-gray-800 to-gray-600 h-screen flex items-center justify-center text-center text-white">
-            <div>
-                <img src="a2.png" alt="Riyed Ahmed" class="rounded-full h-40 w-40 mx-auto mb-4">
-                <h1 class="text-5xl font-bold mb-4">Riyed Ahmed</h1>
-                <p class="text-xl mb-2">Section Officer at Barishal University</p>
-                <p class="mb-8">Transforming university administration through efficiency and innovation.</p>
-                <a href="#contact" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">Contact Me</a>
-            </div>
-        </section>
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>
 
-        <!-- About Me Section -->
-        <section id="about" class="bg-white py-16">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="card p-6 bg-gray-100">
-                        <h3 class="text-xl font-semibold mb-4">Detailed Description</h3>
-                        <p class="mb-4">I am Riyed Ahmed, currently serving as a Section Officer at Barishal University. My role primarily involves overseeing administrative operations, supporting faculty members, and ensuring smooth student affairs.</p>
-                    </div>
-                    <div class="card p-6 bg-gray-100">
-                        <h3 class="text-xl font-semibold mb-4">Experience</h3>
-                        <ul class="list-disc pl-6">
-                            <li>Over 5 years of experience in university administration.</li>
-                            <li>Expertise in managing administrative tasks and operations.</li>
-                            <li>Skilled in facilitating faculty needs and student affairs.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="mt-8 card p-6 bg-gray-100">
-                    <h3 class="text-xl font-semibold mb-4">Skills</h3>
-                    <ul class="list-disc pl-6">
-                        <li>Organizational skills and attention to detail.</li>
-                        <li>Effective communication and interpersonal skills.</li>
-                        <li>Proficiency in administrative software and systems.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<!-- Hero Section -->
+<section id="home" class="mt-2 hero bg-cover bg-center h-screen relative">
+    <!-- Background Image -->
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('a6.jpg');"></div>
 
-        <!-- Responsibilities Section -->
-        <section id="responsibilities" class="bg-gray-100 py-16">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">Responsibilities</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="card p-6 bg-white">
-                        <h3 class="text-xl font-semibold mb-4">Daily Responsibilities</h3>
-                        <ul class="list-disc pl-6">
-                            <li>Managing administrative operations on a daily basis.</li>
-                            <li>Coordinating with faculty and staff to ensure smooth operations.</li>
-                            <li>Handling student inquiries and resolving administrative issues.</li>
-                        </ul>
-                    </div>
-                    <div class="card p-6 bg-white">
-                        <h3 class="text-xl font-semibold mb-4">Key Projects</h3>
-                        <ul class="list-disc pl-6">
-                            <li>Implemented a new scheduling system that reduced conflicts by 30%.</li>
-                            <li>Led a team in organizing a successful university-wide event.</li>
-                            <li>Introduced a mentorship program for new faculty members.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black opacity-50"></div>
 
-        <!-- Achievements Section -->
-        <section id="achievements" class="bg-white py-16">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">Achievements</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="card p-6 bg-gray-100">
-                        <h3 class="text-xl font-semibold mb-4">Notable Achievements</h3>
-                        <ul class="list-disc pl-6">
-                            <li>Increased student satisfaction rates by implementing feedback-driven improvements.</li>
-                            <li>Received recognition for outstanding service in university administration.</li>
-                            <li>Contributed to a 20% increase in enrollment through effective outreach strategies.</li>
-                        </ul>
-                    </div>
-                    <div class="card p-6 bg-gray-100">
-                        <h3 class="text-xl font-semibold mb-4">Metrics and Outcomes</h3>
-                        <p>Implemented a new student registration process that reduced wait times by 50% and improved accuracy in records management.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education and Certifications Section -->
-        <section id="education" class="bg-gray-100 py-16">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">Education and Certifications</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="card p-6 bg-white">
-                        <h3 class="text-xl font-semibold mb-4">Education</h3>
-                        <p>Bachelor of Arts in Administration - Barishal University</p>
-                        <p>Master of Business Administration (MBA) - University of Dhaka</p>
-                    </div>
-                    <div class="card p-6 bg-white">
-                        <h3 class="text-xl font-semibold mb-4">Certifications</h3>
-                        <ul class="list-disc pl-6">
-                            <li>Certified Higher Education Administrator (CHEA)</li>
-                            <li>Project Management Professional (PMP) Certification</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="bg-white py-16">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">Contact</h2>
-                <div class="card p-6 bg-gray-100">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="zoom-effect">
-                            <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
-                            <p>Email: riyed.ahmed@barishaluniv.edu</p>
-                            <p>Phone: +123 456 7890</p>
-                            <p>Address: Barishal University, Barishal, Bangladesh</p>
-                        </div>
-                        <div class="zoom-effect">
-                            <h3 class="text-xl font-semibold mb-4">Contact Form</h3>
-                            <form action="#" method="POST" class="grid grid-cols-1 gap-4">
-                                <input type="text" name="name" placeholder="Your Name" class="border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500">
-                                <input type="email" name="email" placeholder="Your Email" class="border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500">
-                                <textarea name="message" rows="4" placeholder="Your Message" class="border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"></textarea>
-                                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Content -->
+    <div class="container mx-auto flex flex-col items-center justify-center h-full relative z-10">
         
-        <!-- Footer Section -->
-        <footer class="bg-gray-900 text-white py-12">
-            <div class="container mx-auto">
-                <div class="flex flex-wrap justify-between">
-                    <div class="w-full md:w-1/4 p-4">
-                        <h3 class="text-xl font-bold">Riyed Ahmed</h3>
-                        <p>Section Officer at Barishal University. Dedicated to transforming university administration.</p>
-                    </div>
-                    <div class="w-full md:w-1/4 p-4">
-                        <h5 class="text-lg font-semibold">Quick Links</h5>
-                        <ul class="mt-4">
-                            <li class="mt-2"><a href="#about" class="hover:text-gray-400">About Me</a></li>
-                            <li class="mt-2"><a href="#responsibilities" class="hover:text-gray-400">Responsibilities</a></li>
-                            <li class="mt-2"><a href="#achievements" class="hover:text-gray-400">Achievements</a></li>
-                            <li class="mt-2"><a href="#education" class="hover:text-gray-400">Education</a></li>
-                            <li class="mt-2"><a href="#contact" class="hover:text-gray-400">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="w-full md:w-1/4 p-4">
-                        <h5 class="text-lg font-semibold">Follow Me</h5>
-                        <ul class="mt-4 flex space-x-4">
-                            <li><a href="#" class="hover:text-gray-400"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="hover:text-gray-400"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" class="hover:text-gray-400"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="#" class="hover:text-gray-400"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="text-center mt-8">&copy; 2024 Riyed Ahmed. All rights reserved.</p>
+        <!-- Profile Image with Background Text -->
+        <div class="relative w-24 h-24 mb-8">
+            <!-- Background Text -->
+            <div class="absolute inset-0 flex items-center justify-center text-center text-white text-2xl font-bold opacity-50 z-0">
+                Background Text
             </div>
-        </footer>
-    </main>
+            
+            <!-- Image with Responsive Design -->
+            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white absolute top-0 transform -translate-y-1/2 -translate-x-1/2 left-1/2 bg-center bg-cover z-10" style="background-image: url('a2.png');">
+            </div>
+        </div>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <!-- Hero Text -->
+        <div class="text-white text-center">
+            <h1 class="text-5xl font-bold mb-4">Welcome to My Portfolio</h1>
+            <p class="text-xl mb-4">Showcasing my work and projects</p>
+            <a href="#about" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Section -->
+<section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 text-center">
+        <h2 class="section-title">About Me</h2>
+        <p class="text-gray-700 max-w-xl mx-auto">Hello! I'm Riyed Ahmed, a full-stack developer with a passion for creating dynamic and responsive websites. With experience in PHP, JavaScript, and CSS frameworks like Tailwind CSS and Bootstrap, I strive to build efficient and scalable web applications. Currently working as a section officer at Barishal University, I am constantly exploring new technologies and enhancing my skills to stay ahead in the ever-evolving field of web development.</p>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 text-center">
+        <h2 class="section-title">My Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md card">
+                <h3 class="text-xl font-semibold mb-4">Web Development</h3>
+                <p class="text-gray-600">Experience in HTML, CSS, JavaScript, and PHP.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md card">
+                <h3 class="text-xl font-semibold mb-4">Frameworks</h3>
+                <p class="text-gray-600">Proficient in Tailwind CSS, Bootstrap, and React.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md card">
+                <h3 class="text-xl font-semibold mb-4">Backend Development</h3>
+                <p class="text-gray-600">Skilled in Node.js, Express, and database management.</p>
+            </div>
+            <!-- Add more skill cards as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 text-center">
+        <h2 class="section-title">My Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md card">
+                <h3 class="text-xl font-semibold mb-4">Web Design</h3>
+                <p class="text-gray-600">Creating visually appealing and user-friendly designs.</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md card">
+                <h3 class="text-xl font-semibold mb-4">Custom Development</h3>
+                <p class="text-gray-600">Building tailored solutions to meet specific client needs.</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md card">
+                <h3 class="text-xl font-semibold mb-4">Responsive Design</h3>
+                <p class="text-gray-600">Ensuring seamless user experience across all devices.</p>
+            </div>
+            <!-- Add more service cards as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section id="projects" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 text-center">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md card">
+                <h3 class="text-xl font-semibold mb-4">Project One</h3>
+                <p class="text-gray-600">Description of the project goes here.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md card">
+                <h3 class="text-xl font-semibold mb-4">Project Two</h3>
+                <p class="text-gray-600">Description of the project goes here.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md card">
+                <h3 class="text-xl font-semibold mb-4">Project Three</h3>
+                <p class="text-gray-600">Description of the project goes here.</p>
+            </div>
+            <!-- Add more project cards as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 text-center">
+        <h2 class="section-title">What Clients Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md card">
+                <p class="text-gray-600 mb-4">"Riyed's work exceeded our expectations. Highly recommend!"</p>
+                <h3 class="text-xl font-semibold">Client One</h3>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md card">
+                <p class="text-gray-600 mb-4">"Excellent communication and quality development."</p>
+                <h3 class="text-xl font-semibold">Client Two</h3>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md card">
+                <p class="text-gray-600 mb-4">"Delivered the project on time with great attention to detail."</p>
+                <h3 class="text-xl font-semibold">Client Three</h3>
+            </div>
+            <!-- Add more testimonial cards as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Blog Section -->
+<section id="blog" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 text-center">
+        <h2 class="section-title">Latest Blog Posts</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md card">
+                <h3 class="text-xl font-semibold mb-4">Blog Post One</h3>
+                <p class="text-gray-600">Snippet or description of the blog post.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md card">
+                <h3 class="text-xl font-semibold mb-4">Blog Post Two</h3>
+                <p class="text-gray-600">Snippet or description of the blog post.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md card">
+                <h3 class="text-xl font-semibold mb-4">Blog Post Three</h3>
+                <p class="text-gray-600">Snippet or description of the blog post.</p>
+            </div>
+            <!-- Add more blog cards as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-gray-800 text-white">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 text-center">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="mb-8">Feel free to reach out for any inquiries or collaborations!</p>
+        <form action="#" method="POST" class="max-w-lg mx-auto">
+            <div class="mb-4">
+                <input type="text" name="name" placeholder="Your Name" class="w-full p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="mb-4">
+                <input type="email" name="email" placeholder="Your Email" class="w-full p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="mb-4">
+                <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="py-8 bg-gray-900 text-center text-white">
+    <div class="container mx-auto">
+        <p>&copy; 2024 Riyed Ahmed. All rights reserved.</p>
+    </div>
+</footer>
+
 </body>
-
 </html>

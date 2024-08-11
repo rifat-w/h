@@ -14,4 +14,130 @@
 
 .zoom-effect:hover {
     transform: scale(1.05);
+}/* Custom Styles */
+.navbar {
+    background: rgba(0, 0, 0, 0.5); /* Transparent background */
+}
+
+.nav-link {
+    color: white; /* Custom text color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-link:hover {
+    color: #ffcc00; /* Custom hover color */
+}
+.navbar {
+    background: rgba(0, 0, 0, 0.5); /* Transparent background */
+}
+
+.nav-link {
+    color: white; /* Custom text color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-link:hover {
+    color: #ffcc00; /* Custom hover color */
+}
+
+.hero {
+    background-image: url('your-hero-image.jpg'); /* Background image for hero section */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.hero-text {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+/*button*/
+
+/* Example hover effect */
+.button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: #2980b9;
+}
+/* main page all css*/
+
+/* Custom Styles */
+.navbar {
+    background: rgba(0, 0, 0, 0.5); /* Transparent background */
+}
+
+.nav-link {
+    color: white; /* Custom text color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-link:hover {
+    color: #ffcc00; /* Custom hover color */
+    transform: scale(1.1); /* Example of scale transformation */
+}
+
+.hero {
+    background-image: url('your-hero-image.jpg'); /* Background image for hero section */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Ensures child elements respect boundaries */
+    position: relative;
+}
+
+.hero-text {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text */
+    padding: 20px;
+    border-radius: 10px;
+    transform: translateY(20px); /* Example of initial translateY transformation */
+    transition: transform 0.5s ease; /* Smooth transition for transform */
+}
+
+.hero:hover .hero-text {
+    transform: translateY(0); /* Transform reset on hover */
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    transform: scale(0.9); /* Example of scale transformation */
+    transition: transform 0.5s ease; /* Smooth transition for transform */
+}
+
+.section-title:hover {
+    transform: scale(1); /* Transform reset on hover */
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    transform: scale(0.95); /* Example of scale transformation */
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.card:hover {
+    transform: scale(1); /* Transform reset on hover */
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Example of box-shadow effect */
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Button</title>
+    <style>
+        .btn a {
+            display: inline-block;
+            width: 200px; /* Adjust width as needed */
+            height: 50px; /* Adjust height as needed */
+            color: #fff;
+            border-radius: 30px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: background-color 0.55s ease, transform 0.55s ease;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+            background-color: rgba(0, 0, 0, 0.5); /* Default background color */
+            text-align: center; /* Center text inside the button */
+            line-height: 50px; /* Vertically centers text */
+            padding: 10px; /* Add padding for better clickability */
+            box-sizing: border-box; /* Ensure padding is included in width/height */
+        }
+
+        .btn a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Example hover effect */
+            transform: scale(1.05); /* Example hover effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">
+        <a href="#">Click Me</a>
+    </div>
+</body>
+</html>
